@@ -1,7 +1,7 @@
 {
   "Project title": "Test",
-  "Description": "A test run",
-  "Table of Contents": "NA",
+  "Description": "Test",
+  "Table of Contents": "Test",
   "Installation": "NA",
   "Usage": "NA",
   "Credits": "NA",
