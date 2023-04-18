@@ -1,86 +1,92 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
-// const questions = [];
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
-
-inquirer
-  .prompt([
+// array of questions for user input
+const questions = [
     {
       type: 'input',
-      name: 'Project title',
-      message: 'What is the title of your project?'
+      name: 'username',
+      message: 'Please provide your GitHub username to add to your README:',
     },
     {
       type: 'input',
-      name: 'Description',
-      message: 'Write a short description of your project. Include what motivated you to create this project, what problem it solves and what you learned.'
+      name: 'title',
+      message: 'What is the title of your project?',
     },
     {
       type: 'input',
-      name: 'Table of Contents',
+      name: 'description',
+      message: 'Write a short description of your project.',
+    },
+    {
+      type: 'input',
+      name: 'table of contents',
       message: 'If your README is long, write out the sections of your README to be put into a table of contents.'
     },
     {
       type: 'input',
-      name: 'Installation',
+      name: 'installation',
       message: 'What are the steps required to install your project?'
     },
     {
       type: 'input',
-      name: 'Usage',
+      name: 'usage',
       message: 'Provide instructions for the use of your project.'
     },
     {
       type: 'input',
-      name: 'Credits',
-      message: 'List any collaborators for this project, and provide their github profile links. Also include any third-party assets that require attribution, along with links to their primary web presence. Finally, include a link to any tutorials you may have followed, if any.'
+      name: 'credits',
+      message: 'List any collaborators for this project, and provide their github profile links.'
     },
     {
-      // change to list
-      type: 'input',
-      name: 'License',
-      message: 'Please provide the license used to create this project, to let other developers know what they can or can not do with your project.'
-    },
-    {
-      // get rid of this line and add badge when choice is selected
-      type: 'input',
-      name: 'Badges',
-      message: 'Provide a badge of your choice to be displayed on your README. Please use the following format ![badge](https url)'
+      type: 'list',
+      name: 'license',
+      message: 'Please provide the license used to create this project.',
+      choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
     },
     {
       type: 'input',
-      name: 'Features',
+      name: 'features',
       message: 'If your project has a lot of features, list them here:'
     },
     {
       type: 'input',
-      name: 'How to Contribute',
-      message: 'Let other developers know how they can contribute to your project if you wish.'
+      name: 'contribution',
+      message: 'If you would like for contributions to be made to your project, let other developers know how they can do so.'
     },
     {
       type: 'input',
-      name: 'Tests',
+      name: 'tests',
       message: 'Go the extra mile and write tests for your application:'
-    },
-    // add a prompt for user to include github username to be put in the questions section
-  ])
-  .then((answers) => {
-    console.log(answers);
-    // change this to a text file while testing so you can write your own README lol
-    fs.writeFile('README.md', JSON.stringify(answers, null, 2), (err) => {
-      if (err) throw new Error();
+    }
+];
 
-      console.log('README file created successfully...');
-    })
- })
+// TODO: Create a function to write README file
+// function writeToFile(fileName, data) {
+//   fs.writeFile(fileName, data, (err) => {
+//     if (err) throw err;
+//     console.log('README is now being generated...');
+//   }) 
+// }
+
+// function to initialize app and generate the README file
+function init() {
+  inquirer
+    .prompt(questions)
+    .then(answers => {
+      console.log(answers);
+
+      fs.writeFile('README.md', generateMarkdown(answers), err => {
+        if (err) console.error(err);
+        
+        console.log('README has been generated...');
+      });
+  });
+  
+}
+
+init();
+
