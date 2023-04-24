@@ -4,7 +4,9 @@
   
 * This project is brought to you by mosjoreland
   
- Command line program that generates a README file with user input.
+![GitHub Repo](https://github.com/mosjoreland/README-pro)
+
+ This is a command line driven, README file generator, that will a professional standard README file based on your answers to the questions.
   
  ![](https://img.shields.io/badge/license-MIT-blue.svg)
   
@@ -24,24 +26,25 @@
   
  ## License
   
-* This project is licensed under the MIT license
+* This project is licensed under the MIT license.
   
 ## Installation
   
-* Watch the video provided.
+* To generate a README, git clone the repo onto your local machine. Then opemn the integrated terminal and run npm install to install the necessary dependencies. 
   
 ## Usage
   
-* Open the intergrated terminal, type node followed by the path to your JS file and hit enter, then answers all the prompts and let the magic happen.
+* Open the integrated terminal, and run the command 'node index.js' and answer the prompts that are given. When you are prompted with a list of licenses, use the arrow keys to navigate through the choices and hit enter to select. Once you finish answering, your README file will have been overwritten. You can follow along with [the video I have recorded.](https://www.youtube.com/watch?v=Zs_wMvr0fec)
+
   
 ## Contribution
   
-* No contributions, thank you.
+* No thanks.
   
 ## Tests
   
-* To test, copy "node index.js", and paste in the terminal and copy "Coolest project" for all of the prompts.
+* node index.js
   
 ## Credits
   
- N/A
+ No collaborators on this project.
