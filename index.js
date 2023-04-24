@@ -23,11 +23,6 @@ const questions = [
     },
     {
       type: 'input',
-      name: 'table of contents',
-      message: 'If your README is long, write out the sections of your README to be put into a table of contents.'
-    },
-    {
-      type: 'input',
       name: 'installation',
       message: 'What are the steps required to install your project?'
     },
@@ -63,14 +58,6 @@ const questions = [
       message: 'Go the extra mile and write tests for your application:'
     }
 ];
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//   fs.writeFile(fileName, data, (err) => {
-//     if (err) throw err;
-//     console.log('README is now being generated...');
-//   }) 
-// }
 
 // function to initialize app and generate the README file
 function init() {
