@@ -4,7 +4,7 @@
   
 * This project is brought to you by mosjoreland
   
-![GitHub Repo](https://github.com/mosjoreland/README-pro)
+[GitHub Repo](https://github.com/mosjoreland/README-pro)
 
  This is a command line driven, README file generator, that will a professional standard README file based on your answers to the questions.
   
